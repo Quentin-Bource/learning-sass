@@ -1,0 +1,74 @@
+
+body {  background-color: grey;
+background-size: cover;
+font-family: cursive;
+
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: 1fr 550px 1fr;
+    grid-template-rows: 100px 300px 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 0px;
+}
+
+    .spider { grid-area: 2 / 2 / 3 / 3;
+        position: relative;
+    color: beige;
+    background-color: beige;
+    
+         #circle {
+        position: absolute;
+        top: 0;
+        right: 0;
+    background:rgba(200, 7, 7, 0.886) ;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    margin-left: 490px;
+}
+         #rectangle{
+        background: rgba(200, 7, 7, 0.886);
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    font-size: x-large;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+}
+}
+.texte { grid-area: 3 / 2 / 4 / 3; 
+background-color: beige;
+font-size: large;
+padding-top: 15px;
+}
+.apparition {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+}
+.anim{
+     grid-area: 2 / 2 / 4 / 3; 
+     overflow: hidden;
+     &:hover { 
+        .image {
+            transition: 1.5s ;
+            transform: scale(1.2);
+            order: 1
+        }
+        .texte {
+            transform: translateY(-25px);
+            transition: 1.5s;
+        
+        }
+        .apparition {
+            visibility: visible;
+            height: auto;
+            opacity: 1;
+            transition: 1.5s;
+        }
+     }
+}
